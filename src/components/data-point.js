@@ -17,7 +17,7 @@ import React, { useState, memo, useCallback } from 'react';
  * 
  * @returns {JSX.Element} - An SVG group element containing a circle and, optionally, a tooltip.
  */
-const DataPoint = ({ d, minX, minY, xScale, yScale, width, height }) => {
+const DataPoint = ({ d, minX, minY, xScale, yScale, height }) => {
   const [{ showTooltip, tooltipData }, setTooltipState] = useState({
     showTooltip: false,
     tooltipData: null,
@@ -37,12 +37,14 @@ const DataPoint = ({ d, minX, minY, xScale, yScale, width, height }) => {
     [setTooltipState]
   );
 
+  // Handler function for hiding the tooltip
   const hideTooltipHandler = useCallback(() => {
     setTooltipState({ showTooltip: false, tooltipData: null });
   }, [setTooltipState]);
 
   return (
     <g>
+      {/* Data Point */}
       <circle
         cx={CX}
         cy={CY}
@@ -53,6 +55,7 @@ const DataPoint = ({ d, minX, minY, xScale, yScale, width, height }) => {
       />
       {showTooltip && tooltipData === d && (
         <g>
+          {/* Tooltip */}
           <rect
             x={X}
             y={Y - 14}

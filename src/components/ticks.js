@@ -35,6 +35,7 @@ const Ticks = ({
   const Y1 = axis ? height - 25 - (tick - minY) * yScale : height - 25;
   const Y2 = axis ? height - 25 - (tick - minY) * yScale : height - height + 25;
 
+  // Calculate the text position based on axis orientation
   const X = axis ? 10 : 25 + (tick - minX) * xScale;
   const Y = axis ? height - 25 - (tick - minY) * yScale : height - 5;
 

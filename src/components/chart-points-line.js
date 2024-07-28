@@ -14,7 +14,10 @@ import React, { memo, useMemo } from 'react';
  * @return {JSX.Element} The rendered chart as a path element.
  */
 const ChartPointsLine = ({ data, minX, minY, xScale, yScale, height }) => {
+
+  // Create the path data for the line
   const pathData = useMemo(() => {
+    if (!data || !data.length) return '';
     const moveTo = `M${25 + (data[0].x - minX) * xScale},${height - 25 - (data[0].y - minY) * yScale}`;
     const lineTo = data
       .map(

@@ -31,6 +31,7 @@ const LineChart = () => {
     numYTicks: YTicks,
   });
 
+  //
   const {
     minX, maxX, minY, maxY, width, height, xScale, yScale, xTicks, yTicks,
   } = chartConfig;
@@ -64,6 +65,7 @@ const LineChart = () => {
             <svg width={width} height={height} className="chart">
               <Line startPoint={25} height={height} width={width} />
 
+              {/* Ticks for X Axis */}
               {xTicks.map((tick, i) => (
                 <Ticks
                   key={i}
@@ -78,8 +80,10 @@ const LineChart = () => {
                 />
               ))}
 
+              {/* Axis */}
               <Line axis={true} startPoint={25} height={height} width={width} />
 
+              {/* Ticks for Y Axis */}
               {yTicks.map((tick, i) => (
                 <Ticks
                   key={i}
@@ -96,6 +100,7 @@ const LineChart = () => {
                 />
               ))}
 
+              {/* Data Points */} 
               <g>
                 {data.map((d, i) => (
                   <DataPoint
@@ -110,6 +115,7 @@ const LineChart = () => {
                 ))}
               </g>
 
+              {/* Chart Points Line */}
               <ChartPointsLine
                 data={data}
                 minX={minX}

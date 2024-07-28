@@ -1,0 +1,108 @@
+  
+  
+  body{
+    overflow: hidden;
+  }
+
+
+
+/* Style for the chart title section */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.title p {
+  font-size: 18px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Style for the chart container to center and space the chart */
+.chart-container {
+  width: 100vw;
+  padding-top: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+ 
+  
+}
+
+/* Style for the SVG chart */
+.chart {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  width: 1034px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the line elements */
+line {
+  stroke: #ccc;
+  stroke-width: 1;
+}
+
+/* Style for tick marks */
+.tick {
+  stroke: #666;
+  stroke-width: 0.5;
+}
+
+/* Style for data points */
+circle {
+  fill: #3498db;
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+/* Style for the tooltip text */
+text.tooltip {
+  font-size: 14px;
+  fill: #333;
+  text-anchor: start;
+  pointer-events: none; /* Prevent the tooltip from blocking mouse events */
+}
+
+.button {
+  padding: 5px 20px 5px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #2980b9;  
+}
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 100px;
+  font-size: large;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+   width: 100%;
+   height: auto;
+   margin: auto;
+  }
+}
+
